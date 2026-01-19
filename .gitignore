@@ -1,0 +1,49 @@
+# Ignore build results
+/Build/
+/Builds/
+*.apk
+*.aab
+*.exe
+*.app
+
+# Ignore generated files
+/Temp/
+/Logs/
+*.log
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+
+# OS
+Thumbs.db
+*.meta
+
+# Unity
+ProjectSettings/
+*.unitypackage
+.gradle/
+local.properties
+
+# Visual Studio cache directory
+.vs/
+
+# Rider cache
+.idea/
+*.iml
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
