@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HTML5 Video Player for Unity
 
 A lightweight, easy-to-use video playback manager for Unity projects using the [AVPro Video](https://www.renderheads.com/content/apis/). Manage multiple video groups with independent play, pause, and stop controls through UI buttons.
@@ -190,3 +191,7 @@ For issues, questions, or feature requests, please open an issue on the reposito
 ---
 
 **Note:** This script is designed as a helper utility for video playback management. For advanced video features, consult the [AVPro Video documentation](https://www.renderheads.com/content/documentation/).
+=======
+# unity-html5-video-player
+A lightweight video playback manager for Unity using AVPro Video
+>>>>>>> c06c319b0b6fe93c44fc8a40add84f3f01326a9f
