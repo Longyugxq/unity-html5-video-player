@@ -1,46 +1,35 @@
-# Changelog
+# 更新日志
 
-All notable changes to this project will be documented in this file.
+本文档记录项目的所有重要变更。
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，
+本项目遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
 ## [1.0.0] - 2026-01-19
 
-### Added
-- Initial release of HTML5VideoPlayer script
-- Support for multiple video groups with independent controls
-- Play, pause, and stop video playback functionality
-- Async video loading with StreamingAssets support
-- Comprehensive error handling and validation
-- Full XML documentation for IntelliSense support
-- Automatic prevention of overlapping video playback
-- OnDestroy cleanup for proper resource management
-- Helper methods for checking video load status and group count
+### 新增
+- HTML5VideoPlayer 脚本初始发布
+- 支持多个视频组，各组可独立控制
+- 视频播放、暂停和停止功能
+- 支持异步加载和 StreamingAssets 路径
+- 完整的错误处理和数据校验
+- 完整的 XML 文档注释（支持 IntelliSense）
+- 自动防止多个视频重叠播放
+- 销毁时自动清理资源
+- 提供辅助方法检查视频加载状态和组数量
 
-### Features
-- Bind UI buttons directly through Unity Inspector
-- Support for AVPro Video MediaPlayer and DisplayUGUI components
-- Detailed debug logging for troubleshooting
-- Null reference and validation checks
-- Production-ready error messages
+### 功能特性
+- 可在 Unity Inspector 中直接绑定 UI 按钮
+- 支持 AVPro Video 的 MediaPlayer 和 DisplayUGUI 组件
+- 详细的调试日志便于故障排查
+- 空引用检查和完整的数据校验
+- 生产级别的错误提示信息
 
-### Documentation
-- Comprehensive README with quick start guide
-- API reference with code examples
-- Troubleshooting section
-- Performance considerations
-- MIT License included
+### 文档
+- 包含快速开始指南的完整 README
+- 附带代码示例的 API 参考
+- 故障排查部分
+- 性能考量建议
+- 包含 MIT 许可证
 
 ---
-
-## Future Enhancements (Roadmap)
-
-- [ ] Event callbacks (OnVideoFinished, OnVideoLoaded, etc.)
-- [ ] Playback speed control
-- [ ] Volume control integration
-- [ ] Subtitle/Caption support
-- [ ] Seek bar synchronization
-- [ ] Full-screen mode support
-- [ ] Video queue management
-- [ ] Streaming support

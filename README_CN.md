@@ -1,16 +1,4 @@
-# HTML5 Video Player for Unity
-
-A lightweight, easy-to-use video playback manager for Unity projects using the [AVPro Video](https://www.renderheads.com/content/apis/). Manage multiple video groups with independent play, pause, and stop controls through UI buttons.
-
-## Features
-
-✨ **Multi-Video Support** - Manage multiple video groups simultaneously  
-🎮 **Simple UI Integration** - Bind buttons directly through Inspector  
-⚡ **Async Loading** - Non-blocking video initialization  
-🛡️ **Robust Error Handling** - Comprehensive validation and logging  
-📋 **Well-Documented** - Full XML documentation for IntelliSense support  
-````markdown
-# Unity 的 HTML5 视频播放器
+# Unity HTML5 视频播放器
 
 轻量且易用的视频播放管理器，适用于使用 [AVPro Video](https://www.renderheads.com/content/apis/) 的 Unity 项目。可管理多个独立的视频组，并通过 UI 按钮对各组进行播放、暂停和停止控制。
 
@@ -39,33 +27,33 @@ A lightweight, easy-to-use video playback manager for Unity projects using the [
 
 ### 基本设置
 
-1. 在场景中创建一个包含 `HTML5VideoPlayer` 组件的 GameObject
-2. 在 Inspector 中配置视频组：
+1. **在场景中创建 GameObject** 并添加 `HTML5VideoPlayer` 组件
+2. **在 Inspector 中配置视频组**：
    - 设置所需的视频组数量
    - 对于每个视频组：
-     - 指定 **Play Button**（UI Button）
-     - 指定 **Pause Button**（UI Button）
-     - 指定 **Stop Button**（UI Button）
+     - 指定 **播放按钮**（UI Button）
+     - 指定 **暂停按钮**（UI Button）
+     - 指定 **停止按钮**（UI Button）
      - 指定 **MediaPlayer**（AVPro Video 的 MediaPlayer 组件）
      - 指定 **DisplayUGUI**（AVPro Video 的 DisplayUGUI 组件）
-     - 设置 **Video File Name**（相对于 StreamingAssets 文件夹的路径）
+     - 设置 **视频文件名**（相对于 StreamingAssets 文件夹的路径）
 
-3. 将视频放置在 `Assets/StreamingAssets/` 目录下
+3. **将视频放置在** `Assets/StreamingAssets/` **目录下**
 
 ### Inspector 示例配置
 
 ```
-HTML5VideoPlayer (Component)
-├─ Video Groups
+HTML5VideoPlayer (组件)
+├─ 视频组列表
 │  ├─ [0]
-│  │  ├─ Play Button: [Reference to UI Button]
-│  │  ├─ Pause Button: [Reference to UI Button]
-│  │  ├─ Stop Button: [Reference to UI Button]
-│  │  ├─ MediaPlayer: [Reference to MediaPlayer]
-│  │  ├─ DisplayUGUI: [Reference to DisplayUGUI]
-│  │  └─ Video File Name: "myvideo.mp4"
+│  │  ├─ 播放按钮: [UI 按钮引用]
+│  │  ├─ 暂停按钮: [UI 按钮引用]
+│  │  ├─ 停止按钮: [UI 按钮引用]
+│  │  ├─ 媒体播放器: [MediaPlayer 引用]
+│  │  ├─ 显示组件: [DisplayUGUI 引用]
+│  │  └─ 视频文件名: "myvideo.mp4"
 │  └─ [1]
-│     └─ [Similar configuration for second video]
+│     └─ [第二个视频的类似配置]
 ```
 
 ## API 参考
@@ -76,21 +64,21 @@ HTML5VideoPlayer (Component)
 播放指定视频组的视频。会自动停止其他正在播放的视频以避免重叠。
 
 ```csharp
-videoPlayer.PlayVideo(0); // Play first video group
+videoPlayer.PlayVideo(0); // 播放第一个视频组
 ```
 
 #### `PauseVideo(int groupIndex)`
 暂停指定视频组的视频。
 
 ```csharp
-videoPlayer.PauseVideo(0); // Pause first video group
+videoPlayer.PauseVideo(0); // 暂停第一个视频组
 ```
 
 #### `StopVideo(int groupIndex)`
 停止视频并将播放位置重置到开头。
 
 ```csharp
-videoPlayer.StopVideo(0); // Stop first video group
+videoPlayer.StopVideo(0); // 停止第一个视频组
 ```
 
 #### `GetVideoGroupCount()`
@@ -106,7 +94,7 @@ int count = videoPlayer.GetVideoGroupCount();
 ```csharp
 if (videoPlayer.IsVideoGroupLoaded(0))
 {
-    Debug.Log("Video 0 is ready to play");
+    Debug.Log("视频 0 已加载，准备就绪");
 }
 ```
 
@@ -139,12 +127,12 @@ public class VideoController : MonoBehaviour
 ### 检查视频状态
 
 ```csharp
-// Check if all videos are loaded
+// 检查所有视频是否已加载
 for (int i = 0; i < videoPlayer.GetVideoGroupCount(); i++)
 {
     if (videoPlayer.IsVideoGroupLoaded(i))
     {
-        Debug.Log($"Video {i} is loaded and ready");
+        Debug.Log($"视频 {i} 已加载并准备就绪");
     }
 }
 ```
@@ -169,8 +157,8 @@ for (int i = 0; i < videoPlayer.GetVideoGroupCount(); i++)
 
 | 问题 | 解决方法 |
 |-------|----------|
-| "VideoGroup X has no MediaPlayer" | 在 Inspector 中为该视频组分配 MediaPlayer 组件 |
-| "Failed to open video" | 检查视频文件路径，确保文件存在于 StreamingAssets 中 |
+| "VideoGroup X 未配置 MediaPlayer" | 在 Inspector 中为该视频组分配 MediaPlayer 组件 |
+| "打开视频失败" | 检查视频文件路径，确保文件存在于 StreamingAssets 中 |
 | 视频未显示 | 分配 DisplayUGUI 组件并确保 UI Canvas 配置正确 |
 | 按钮无响应 | 确认按钮已分配且在层级中未被禁用 |
 
@@ -181,9 +169,9 @@ for (int i = 0; i < videoPlayer.GetVideoGroupCount(); i++)
 - 使用压缩视频格式以提高性能
 - 考虑平台特定的视频编解码器（如 H.264、VP8 等）
 
-## 许可
+## 许可证
 
-该脚本按原样提供以供在 Unity 项目中使用。可根据 MIT 许可进行修改和分发。
+本脚本按原样提供以供在 Unity 项目中使用。可根据 MIT 许可进行自由修改和分发。
 
 ## 更新日志
 
@@ -197,10 +185,8 @@ for (int i = 0; i < videoPlayer.GetVideoGroupCount(); i++)
 
 ## 支持
 
-如有问题、疑问或功能请求，请在仓库中打开 issue。
+如有问题、疑问或功能请求，请在仓库中打开 Issue。
 
 ---
 
-**注意：** 本脚本旨在作为视频播放管理的辅助工具。有关高级视频功能，请参考 [AVPro Video documentation](https://www.renderheads.com/content/documentation/)。
-
-```
+**注意：** 本脚本旨在作为视频播放管理的辅助工具。有关 AVPro Video 的高级功能，请参考 [官方文档](https://www.renderheads.com/content/documentation/)。
